@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const ESLintPlugin = require('eslint-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 /** @type {import('eslint-webpack-plugin').Options & import('eslint').ESLint.Options} */
 const eslintPluginOptions = {
@@ -40,7 +39,6 @@ module.exports = [
 			new webpack.DefinePlugin({
 				ENV: JSON.stringify("desktop")
 			}),
-      new CleanWebpackPlugin(),
 			new ESLintPlugin(eslintPluginOptions)
 		]
 	}
